@@ -1,0 +1,40 @@
+public static function getItemsToUpdate($className)
+   {
+      $modelName = end(explode('\\', $className));
+      $posted = $_POST[$modelName];
+      $models = [];
+
+      // Iterate over each item from the submitted form
+      if (isset($posted) && is_array($posted))
+      {
+         if (ArrayHelper::isAssociative($posted)) // A single model of this type
+         {
+            // If item id is available, read the record from database 
+            if (array_key_exists('id', $posted))
+            {
+               $models[$posted['id']] = $className::find($posted['id']);
+            }
+            // Otherwise create a new record
+            else
+            {
+               $models[] = new $className();
+            }
+         } else // Multiple models of the same type
+         {
+            foreach ($posted as $index => $item)
+            {
+               // If item id is available, read the record from database 
+               if (array_key_exists('id', $item))
+               {
+                  $models[$item['id']] = $className::find($item['id']);
+               }
+               // Otherwise create a new record
+               else
+               {
+                  $models[] = new $className();
+               }
+            }
+         }
+      }
+      return $models;
+   }

@@ -1,0 +1,61 @@
+/**
+ * PHASE 1: $500
+ */
+
+-phone number not saving on create student
+-class change to reflect changed division
+-keep table headings on top of student view
+-promote new students to white belt
+-DONE make class dropdown update based on division selection in create student view
+-check update time before updating student?
+-kumite auth printout
+-DONE assign super admin role to zabinski; add "change school" permission for super admin role; decouple super admin role form hardcoded superadmins
+-DONE default gender = blank
+-DONE when adding student, check first 3+ chars of last name for matches and show results in warning box at top, with names linked to edit profile; maybe also with reactivate link
+
+/**
+ * PHASE 2: $500
+ */
+Testing
+
+/**
+ * PHASE 3: $1000
+ */
+Everything else!
+
+/**
+ * PHASE 4: $350
+ */
+Weapons anchors and attendance
+Tournament export to excel (all active students)
+
+/**
+ * PHASE X
+ */
+
+grappling auth printout
+
+de-dupe phones then set phone.number to unique
+
+//////////////////dev notes////////////////////////////
+
+copied 
+
+    /**
+     * @inheritdoc
+     */
+    protected function getDataCellValue($model, $key, $index)
+    {
+        if ($this->value !== null) {
+            if (is_string($this->value)) {
+                return ArrayHelper::getValue($model, $this->value);
+            } else {
+                return call_user_func($this->value, $model, $index, $this);
+            }
+        } elseif ($this->attribute !== null) {
+            return ArrayHelper::getValue($model, $this->attribute);
+        }
+        return null;
+    }
+    
+    to kartik version, and added $key as 3rd arg to call_user_func
