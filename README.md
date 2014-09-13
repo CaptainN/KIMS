@@ -1,5 +1,5 @@
-KIMS (Karate Informate Management System)
-=========================================
+KIMS (Karate Information Management System)
+===========================================
 
 Yii 2 Basic Application Template is a skeleton Yii 2 application best for
 rapidly creating small projects.
@@ -7,6 +7,13 @@ rapidly creating small projects.
 The template contains the basic features including user login/logout and a contact page.
 It includes all commonly used configurations that would allow you to focus on adding new
 features to your application.
+
+REQUIREMENTS
+------------
+
+PHP 5.4.0+
+[Composer](https://getcomposer.org): php -r "readfile('https://getcomposer.org/installer');" | php
+To create initial /vendor dir: php composer.phar install
 
 
 DIRECTORY STRUCTURE
@@ -25,11 +32,6 @@ DIRECTORY STRUCTURE
       web/                contains the entry script and Web resources
 
 
-
-REQUIREMENTS
-------------
-
-The minimum requirement by this application template that your Web server supports PHP 5.4.0.
 
 
 INSTALLATION
