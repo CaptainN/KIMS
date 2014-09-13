@@ -15,7 +15,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.4.0",
-		"yiisoft/yii2": "2.*",
+		"yiisoft/yii2": "*",
 		"yiisoft/yii2-bootstrap": "*",
 		"yiisoft/yii2-swiftmailer": "@dev",
       "mpdf/mpdf" : "@dev",
@@ -30,6 +30,7 @@
 		"kartik-v/yii2-builder": "dev-master",
 		"kartik-v/yii2-datecontrol": "dev-master",
 		"kartik-v/php-date-formatter": "dev-master",
+      "kartik-v/yii2-editable": "*",
       "2amigos/yii2-editable-widget" : "*",
 		"2amigos/yii2-grid-view-library": "@dev"
 	},
