@@ -28,10 +28,10 @@ $config = [
       ],
       'datecontrol' => [
          'class' => '\kartik\datecontrol\Module',
-         
+
          // don't automatically display the picker widget
          'autoWidget' => false,
-         
+
          // format settings for displaying each date attribute
          'displaySettings' => [
             \kartik\datecontrol\Module::FORMAT_DATE => 'm/d/Y',
@@ -100,6 +100,11 @@ $config = [
             ],
          ],
       ],*/
+      'request' => [
+        'enableCookieValidation' => true,
+        'enableCsrfValidation' => true,
+        'cookieValidationKey' => 'sdierudnf34374ejfhsdf',
+      ],
       'db' => $db,
    ],
    'params' => $params,
