@@ -37,34 +37,24 @@ DIRECTORY STRUCTURE
 INSTALLATION
 ------------
 
-### Install from an Archive File
-
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-You can then access the application through the following URL:
-
-~~~
-http://localhost/basic/web/
-~~~
-
-
-### Install via Composer
-
 If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
 at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
-You can then install this application template using the following command:
+## Setting up composer globally via brew on OSX
+
+OSX: install [homebrew](http://brew.sh/), then run (from the official composer install instructions):
+
+```
+brew update
+brew tap homebrew/dupes
+brew tap homebrew/php
+brew install composer
+```
+
+Homebrew installs an old version of composer globally. If you try to run it you'll probably get memory errors. You can update composer to get around it:
 
 ~~~
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
-~~~
-
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
-
-~~~
-http://localhost/basic/web/
+composer selfupdate
 ~~~
 
 
