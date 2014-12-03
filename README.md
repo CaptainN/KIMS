@@ -51,11 +51,21 @@ brew tap homebrew/php
 brew install composer
 ```
 
-Homebrew installs an old version of composer globally. If you try to run it you'll probably get memory errors. You can update composer to get around it:
+Homebrew may install an old version of composer. If you try to run it you'll probably get memory errors. You can update composer to get around it:
 
 ~~~
 composer selfupdate
 ~~~
+
+YiiFramework 2.0 seems to need this before you run intall (if you forget or miss this, you can do this after install, and run `composer update` later):
+
+```
+composer global require "fxp/composer-asset-plugin:1.0.*@dev"
+```
+
+Now run `composer install` or `composer install --dev` to grab all the dependencies.
+
+Note: You should always run `composer install` or `composer install --dev` the first time you grab your dependencies, and `composer update` or `composer update --dev` only when you add/remove/change your dependencies later.
 
 
 CONFIGURATION
