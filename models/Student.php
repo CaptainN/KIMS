@@ -327,7 +327,8 @@ class Student extends \app\components\MetaModel
         ->andWhere(['location_id' => Yii::$app->user->schoolId])
         ->andWhere(['class_type.name' => 'Weapons'])
         //->andWhere(['class_frequency.ord' => 0]) // every week
-        ->andFilterWhere(['division_id' => $this->division_id])
+        // :???: class has no division_id
+        //->andFilterWhere(['division_id' => $this->division_id])
         // include the current anchor, in case it's in a different division
         ->orFilterWhere(['class.id' => $this->affiliation->weapon_anchor_id])
         ->orderBy(['-`day`.`ord`' => SORT_DESC, 'start_time' => SORT_ASC])
@@ -469,11 +470,11 @@ class Student extends \app\components\MetaModel
       }
    }
 
-   public function afterSave($insert)
+   /*public function afterSave($insert, $changedAttributes)
    {
       // placeholder (nothing extra to do at this point)
-      parent::afterSave($insert);
-   }
+      parent::afterSave($insert, $changedAttributes);
+   }*/
 
    public static function getDivisionMap()
    {

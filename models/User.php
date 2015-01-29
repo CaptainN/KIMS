@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 class User extends \auth\models\User
-{   
+{
 
    /**
     * @inheritdoc
@@ -26,7 +26,7 @@ class User extends \auth\models\User
          ['reportMonth', 'safe'],
       ]);
    }
-   
+
    /**
     * @inheritdoc
     */
@@ -36,7 +36,7 @@ class User extends \auth\models\User
          'schoolId' => 'School ID',
       ]);
    }
-   
+
    /**
     * @inheritdoc
     */
@@ -45,7 +45,7 @@ class User extends \auth\models\User
       return array_merge(parent::attributes(), [
       ]);
    }
-   
+
    /**
     * @inheritdoc
     */
@@ -54,15 +54,15 @@ class User extends \auth\models\User
       //dump($this->dirtyAttributes);
 		return parent::beforeSave($insert);
 	}
-   
+
    /**
     * @inheritdoc
     */
-   public function afterSave($insert)
+   public function afterSave($insert, $changedAttributes)
 	{
-		parent::afterSave($insert);
+		parent::afterSave($insert, $changedAttributes);
 	}
-   
+
    /**
     * @return mixed the value of the given option or the default, if none
     */
@@ -89,7 +89,7 @@ class User extends \auth\models\User
          return isset($meta) ? $meta->value : $defaultValue;
       }
    }
-   
+
    /**
     * Saves a user option.
     */
@@ -99,27 +99,27 @@ class User extends \auth\models\User
       $meta->value = $newValue;
       $meta->save();
    }
-   
+
    public function getRowsPerPage($default = 20)
    {
       return $this->getOption('rowsPerPage', $default);
-   }   
-   
+   }
+
    public function setRowsPerPage($newValue)
    {
       return $this->setOption('rowsPerPage', (int)$newValue);
    }
-   
+
    public function getSchoolId()
    {
       return $this->getOption('schoolId', 0);
    }
-   
+
    public function setSchoolId($newValue)
    {
       return $this->setOption('schoolId', (int)$newValue);
    }
-   
+
    /**
     * Each user can only be affiliated with one school at a time;
     * Admins can change their school at any time.
@@ -129,12 +129,12 @@ class User extends \auth\models\User
    {
       return School::findOne($this->schoolId);
    }
-   
+
    public function getReportMonth()
    {
       return $this->getOption('reportMonth', null);
    }
-   
+
    public function setReportMonth($newValue)
    {
       if (gettype($newValue) === 'string')
