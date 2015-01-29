@@ -57,7 +57,7 @@ Homebrew may install an old version of composer. If you try to run it you'll pro
 composer selfupdate
 ~~~
 
-YiiFramework 2.0 seems to need this before you run intall (if you forget or miss this, you can do this after install, and run `composer update` later):
+YiiFramework 2.0 seems to need this before you run intall (if you forget or miss this note, you can do this after install, and run `composer update` later):
 
 ```
 composer global require "fxp/composer-asset-plugin:1.0.*@dev"
