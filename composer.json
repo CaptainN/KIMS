@@ -32,7 +32,8 @@
 		"kartik-v/php-date-formatter": "dev-master",
       	"kartik-v/yii2-editable": "*",
       	"2amigos/yii2-editable-widget" : "*",
-		"2amigos/yii2-grid-view-library": "@dev"
+		"2amigos/yii2-grid-view-library": "@dev",
+		"kartik-v/yii2-mpdf": "dev-master"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",
