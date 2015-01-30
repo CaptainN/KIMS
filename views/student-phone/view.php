@@ -1,6 +1,6 @@
 <?php
 
-use app\helpers\Html;
+use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /**
